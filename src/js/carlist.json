@@ -1,4 +1,4 @@
-var  cardb =  {
+{
   "carlist":
     [
             { "make":"Hyundai", "models":"Accent", "year":"2006", "option":"1.5 CRDi turbo 5-speed M/T", "fuel":"14.3" , "fueltype":"Diesel" },
