@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+{% include "templates/head.html" %}
+<body>
+  {% set page='calcu' %}
+  {% include "templates/nav.html" %}
+<div class="content orange">
+  <div class="container-fluid">
+    <div class="row"  >
+      <div class="container appbox">
+        <div id="form1">
+          <h1 id="Result" class="hidden-xs-down">Select Your Car:</h1>
+          <b><p id="Result2" class="hidden-sm-up">Select Your Car:</p></b>
+          <hr>
+          <div id="loader" class="container-fluid" align="center"><div class="loader"></div></div>
+          <form id="selectcar" hidden>
+            <div class="form-group">
+              <label for="formGroupExampleInput">Vehicle Manufacturer</label>
+              <select id="vehmk" class="custom-select form-control" onchange="vehmkonselect()">
+                <option hidden class="placeholder">Choose your Car Maker</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Vehicle Model</label>
+              <select id="vehmd" class="custom-select form-control" onchange="vehmdonselect()" disabled>
+                <option hidden class="placeholder">Choose your Car Model</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="formGroupExampleInput">Model Year</label>
+              <select id="vehyr" class="custom-select form-control" onchange="vehyronselect()" disabled>
+                <option hidden>Choose your Car Year</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Vehicle Specification</label>
+              <select id="vehopt" class="custom-select form-control" onchange="vehoptonselect()" disabled>
+                <option hidden class="placeholder">Choose your Car Specification</option>
+                <!--<option value="1">Auto 6-speed, 4-cylinder, 1.6L </option>-->
+                <!--<option value="2">Man 6-speed, 4-cylinder, 1.6L</option>-->
+              </select>
+            </div>
+            
+            <div class="form-group" align="right">
+              <button id="form1nextbtn" type="button" class="btn btn-primary" onclick="form1script()" disabled> Continue </button>
+            </div>
+          </form>
+        </div>
+        
+        <div id="form2" hidden> <!--HIDDEN-->
+          <br>
+          <h1 id="Result3"></h1>
+          <button type="reset" class="btn btn-link" onclick="form2script()">Change Car</button>
+          <hr>
+            <div class="container">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="KMpL">Kilometers/Liter</label>
+                  <div class="input-group">
+                    <input type="number" class="form-control" id="KMpL" placeholder="Kilometers/liter">
+                    <span class="input-group-addon">Kilometers/Liter</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="fuelprice">Fuel Price/Literr</label>
+                  <div class="input-group">
+                    <span class="input-group-addon">₱</span>
+                    <input type="number" class="form-control" id="fuelprice" placeholder="Fuel Price">
+                    <div class="input-group-btn">
+                      <button  id="gasmenu" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Gas.
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item pointer" onclick="gas(GasPrice, 'Unleaded')">Unleaded</a>
+                        <a class="dropdown-item pointer" onclick="gas(PremiumGasPrice, 'Premium')">Premium</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="origin-input">Starting Location:</label>
+                  <div class="input-group">
+                    <span class="input-group-addon btn" onclick="geoFindMe()"><img class="localImagesAssets" src="dist/assets/img/map-pin.png" style="height:18px;"></span>
+                    <input type="text" class="form-control" id="origin-input" placeholder="Starting Location">
+                    <div id="out"></div>
+                  </div>   
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="destination-input">Destination:</label>
+                  <input type="text" class="form-control" id="destination-input" placeholder="Destination">
+                </div>
+              </div>
+              <div class="col-sm-12" align="center">
+                <button id="calcbtn" disabled onclick="calculate()" class="btn btn-primary">Calculate</button>
+              </div>
+              <hr>
+
+            </div>
+            <br>
+            <div id="loader2" class="container-fluid" align="center" hidden><div class="loader"></div></div>
+              <div id="calcuresult" hidden>
+                <div class="card card-outline-primary text-center">
+                  <div class="card-block">
+                    <blockquote class="card-blockquote">
+                      <p id="totalFuelConsumption"></p><br>
+                      <p id="totalDistance"></p><br>
+                      <p id="travelDuration"></p><br>
+                      <footer><h4>Total Trip Cost(One Way): <p id="totalCostOut"></p></h4></footer>
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+            <br>
+            <div class="container" align="center">
+                  <div class="mapstyle">
+                  <div id="map"></div>  
+                  </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+{% include "templates/script.html" %}  
+<script class="localJSAssets" src="dist/assets/js/calculate.js"></script>
+</div>
+<script>  
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvdUQogQe20XB400SaYqZ5kj879vX4YIw&libraries=places" async defer></script>
+{% include "templates/footer.html" %}
+</body>
+</html>
+

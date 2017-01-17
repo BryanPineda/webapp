@@ -1,0 +1,29 @@
+.orange{
+  padding: 40px;
+  background-color: #F27C24;
+  color: white;
+  height: 100%;
+}
+
+ .appbox{
+  background-color: #fff;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 15px;
+  color: #000;
+}
+
+@media screen and (max-width: 480px){
+  .orange{
+    padding: 10px;
+  }
+}
+
+.pointer{
+  cursor: pointer;
+  
+     &:hover{
+       background-color: #0275d8;
+     }
+}
+

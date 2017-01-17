@@ -1,0 +1,16 @@
+<nav class="navbar navbar-dark bg-primary" style="border-radius:0px">
+  <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+  <div class="collapse navbar-toggleable-sm" id="navbarResponsive">
+    <ul class="nav navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link localLinks {{ 'active' if page=='home' }}" href="dist/views/index.html"><h5>Home</h5></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link localLinks {{ 'active' if page=='calcu' }}" href="dist/views/calculate.html"><h5>Calculate Fuel</h5></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link localLinks {{ 'active' if page=='about' }}" href="dist/views/about.html"><h5>About Us</h5></a>
+      </li>
+    </ul>
+  </div>
+</nav>

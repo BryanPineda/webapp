@@ -1,0 +1,16 @@
+.mapstyle{
+    padding: 5px;
+    height: 250px;
+    width: 100%;
+}
+
+@media screen and (min-width: 768px){
+  .mapstyle{
+    padding: 20px;
+    height: 500px;
+    width: 80%;
+  }
+}
+#map {
+  height: 100%;
+}

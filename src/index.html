@@ -1,0 +1,141 @@
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+{% include "templates/head.html" %}
+
+<body>
+
+  {% set page= 'home' %}
+  {% include "templates/nav.html" %}
+<div class="content">
+  <div class="container-fluid banner">
+    <div class="row bannerbox">
+        <div class="col-md-6 bannertext">
+          <h2>CALCULATE YOUR FUEL NOW!</h2>
+          <p>Plan your trip and Improved fuel economy saves you money every time you fill up! </p>
+        </div>
+        <div class="col-md-6">
+          <img class="localImagesAssets bannerimg" src="dist/assets/img/fuelbanner.jpg"/>
+        </div>
+    </div>
+  </div>
+  <div class="container-fluid" align="center">
+    <div class="row">
+      <h3>Plan Your Trip Now!!! <a class="localLinks" href="dist/views/calculate.html"><button class="btn btn-primary">Calculate Fuel!</button></a></h3>
+    </div>
+    <hr>
+    <div class="row infobox">
+      <div class="col-md-4">
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        	<div class="flipper">
+        		<div class="front">
+        			<img class="localImagesAssets infoimg" src="dist/assets/img/bar-graph.png">
+        			<hr>
+              <h3>Save Fuel</h3>
+              <p>Save Fuel Text</p>
+        		</div>
+        		<div class="back">
+        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        		</div>
+        	</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        	<div class="flipper">
+        		<div class="front">
+        			<img class="localImagesAssets infoimg" src="dist/assets/img/pie-graph.png">
+        			<hr>
+              <h3>Cost Savings</h3>
+              <p>Save Cost by panning your trip</p>
+        		</div>
+        		<div class="back">
+        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        		</div>
+        	</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        	<div class="flipper">
+        		<div class="front">
+        			<img class="localImagesAssets infoimg" src="dist/assets/img/neo-logo.png">
+        			<hr>
+              <h3>More Kilometers!</h3>
+              <p>Do more Kilometers</p>
+        		</div>
+        		<div class="back">
+        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        		</div>
+        	</div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="container">
+      <h1>Fuel-saving tips</h1>
+      <div class="card-deck-wrapper">
+        
+        
+        
+        {% macro card(color, title, title2, text, text2) %}
+        <div class="card-deck">
+          <div class="card card-inverse card-{{color}} text-xs-center box">
+            <div class="card-block">
+              <h4 class="card-title">{{title}}</h4>
+              <p class="card-text">{{text}}</p>
+            </div>
+          </div>
+          <div class="card card-inverse card-{{color}} text-xs-center box">
+            <div class="card-block">
+              <h4 class="card-title">{{title2}}</h4>
+              <p class="card-text">{{text2}}</p>
+            </div>
+          </div>
+        </div>
+        {% endmacro %}
+        {{ card(
+            'primary',
+            'Stay Aerodynamic',
+            'Slow down',
+            'Wind resistance increases fuel consumption so try to keep windows closed at high speeds and remove roof racks and boxes when not in use. Removing a roof-top cargo box can save as much as 20% on fuel over a year.',
+            'According to the AA, dropping from 80mph to 70mph could save you up to 25% in fuel. And if you’re on smaller roads, slowing down from 70mph to 60mph could save another 10%.'
+            ) }}
+        {{ card(
+            'success',
+            'Maintenance',
+            'Sensible driving',
+            'Get your car serviced regularly to maintain engine efficiency and make sure you’re using the correct engine oil (check the handbook).',
+            'Read the road ahead, anticipating the actions of other drivers and potential hazards. The less braking and acceleration, the less fuel used. For instance, drive smoothly in heavy traffic and avoid driving fast to catch up to the car in front, then having to brake.'
+            ) }}
+        {{ card(
+            'info',
+            'Drop the revs',
+            'Look after tyres',
+            'Some motorists let the revs (revolutions per minute or RPM) run to 3,000 per minute (petrol car) and 2,500 (diesel) before changing up a gear. It’s more efficient to move up a gear at 2,500 (petrol) and 2,000 (diesel). Also, use high gears such as fifth and sixth gears sooner than later.',
+            'Well maintained tyres are essential for safe and economical driving. Check tyre pressures regularly (especially before a motorway journey). The RAC claims that correctly inflated tyres can improve fuel consumption by up to 2%.'
+            ) }}
+        {{ card(
+            'warning',
+            'Reduce weight',
+            'Speed bumps',
+            'A lighter car will use less fuel, so don’t drive around with unnecessary items in your boot and unless you’re on a long journey, consider running your fuel tank half full or less.',
+            'Braking hard, accelerating, then braking for the next speed bump is inefficient and uses extra fuel. Try to drive along at a steady 15-20mph instead.'
+            ) }}
+        {{ card(
+            'danger',
+            'Air con or open windows?',
+            'Drive a manual',
+            'Air-conditioning increases fuel consumption, especially at low speeds. If it’s a hot day, use the air conditioning for high speed driving, but open the windows around town.',
+            'According to the AA, automatics use 10% to 15% more fuel than manuals. However, the gap is closing as modern, efficient semi-automatics become more popular. There’s also little difference between automatics and manuals on motorways.Work out how much fuel you use every week. Now try slowing down for a week and see what difference it makes. Find out the facts when thinking about whether you need a car, and make sure you know how much different types of cars cost to run.'
+            ) }}
+      </div>
+    </div>
+  </div>
+  {% include "templates/footer.html" %}
+  {% include "templates/script.html" %}
+</div>
+</body>
+</html>
+

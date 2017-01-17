@@ -1,0 +1,35 @@
+$orangecolor: #F27C24;
+
+// html {
+//   height: 100%;
+// }
+// body {
+//   min-height: 100%;
+//   display: flex;
+//   flex-direction: column;
+// }
+// .content {
+//   flex: 1;
+// }
+
+footer {
+  padding: 15px;
+  background-color: #007fff;
+  color: #fff;
+  text-align: center;
+}
+
+footer a{
+color: #fff;
+  &:hover, &:active, &:visited
+  {
+    color:$orangecolor;
+      text-shadow:
+     -1px -1px 0 #0050ff,  
+      1px -1px 0 #0050ff,
+      -1px 1px 0 #0050ff,
+       1px 1px 0 #0050ff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
